@@ -10,5 +10,9 @@ Usa python 3.5+
 - python manage.py migrate
 
 
+Para importar una seccion del boletin ::
+
+
+python manage.py importar_seccion <url_al_pdf>
 
 
