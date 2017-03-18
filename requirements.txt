@@ -1,0 +1,5 @@
+dateparser==0.6.0
+Django==1.10.6
+ipython==5.3.0
+psycopg2==2.7.1
+https://github.com/mgaitan/django-databrowse.git@py3dj10#egg=django-databrowse

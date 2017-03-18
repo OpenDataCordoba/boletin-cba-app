@@ -1,0 +1,19 @@
+"""
+(boletin_oficial_cba)tin@morochita:~/lab/bocba/boc$ sudo su - postgres
+[sudo] password for tin:
+postgres@morochita:~$ createuser boc
+postgres@morochita:~$ createdb -O boc boc_db
+postgres@morochita:~$ logout
+"""
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'boc_db',
+        'USER': 'boc',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
