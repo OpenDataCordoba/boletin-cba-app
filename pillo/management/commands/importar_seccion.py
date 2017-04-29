@@ -31,7 +31,7 @@ class Command(BaseCommand):
             with urllib.request.urlopen(url) as response, NamedTemporaryFile(suffix='.pdf') as out_file:
                 # Download the file from `url` and save it locally under `file_name`:
                 shutil.copyfileobj(response, out_file)
-                result = subprocess.run(['pdftotext', out_file.name, '-'], stdout=subprocess.PIPE)
+                result = subprocess.run(['pdftotext', '-raw', out_file.name, '-'], stdout=subprocess.PIPE)
                 texto = result.stdout.decode('utf8')
                 fechas = re.findall(FECHA_PATTERN, texto)
                 fecha = dateparser.parse(fechas[0], languages=['es']).date()
@@ -41,8 +41,4 @@ class Command(BaseCommand):
             if created:
                 print('Importado {}'.format(obj))
             else:
-                print('Actulizado {}'.format(obj))
-
-
-
-
+                print('Actualizado {}'.format(obj))
